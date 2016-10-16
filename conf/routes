@@ -1,0 +1,17 @@
+
+#GET        /Machines                                     controllers.ODataController.machines()
+#
+#GET        /Citrix/Monitor/OData/v1/Data                 controllers.ODataController.debug
+#GET        /Citrix/Monitor/OData/v1/Data/Machine         controllers.ODataController.debug
+GET        /Citrix/Monitor/OData/v1/Data/Machines(:id)        controllers.ODataController.machines(id)
+#GET        /Citrix/Monitor/OData/v1/Machine              controllers.ODataController.debug
+
+
+GET        /Citrix/Monitor/OData/v1/Data/:path        controllers.ODataController.meta(path: String)
+GET        /*path                                     controllers.ODataController.debugpath(path: String)
+
+#
+# resources
+#
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file                              controllers.Assets.versioned(path="/public", file: Asset)
